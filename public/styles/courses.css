@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {  
+    width: 100%;
+    /*padding: 2rem max(1rem, 5vw);*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #e9f1fa;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.head{
+    height: 10vh;
+    width: 100%;
+    padding: 2rem max(1rem, 5vw);
+    display: flex;
+    justify-content: flex-start;
+    background-image:url(bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.head h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #0052D4;
+}
+.cours{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.footer{
+    height: 90vh;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    gap: 1rem;
+    margin: 30px 0 60px 0;
+    padding: 0;
+}
+  
+.gallery .card {
+    position: relative;
+    list-style-type: none;
+    height: 200px;
+    padding: 0px;
+    background: #9CECFB;
+    background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);  
+    background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    border-radius: 10px;
+    box-shadow:
+      0.3px 0.5px 0.7px hsl(0deg 0% 0% / 0.36),
+      0.8px 1.6px 2px -0.8px hsl(0deg 0% 0% / 0.36),
+      2.1px 4.1px 5.2px -1.7px hsl(0deg 0% 0% / 0.36),
+      5px 10px 12.6px -2.5px hsl(0deg 0% 0% / 0.36);
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: .5s;
+}
+
+
+.gallery .card .imgBx{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gallery .card .imgBx img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery .card .imgBx ion-icon{
+    font-size: 5em;
+}
+
+.gallery .card .content {
+    position: absolute;
+    bottom: -160px;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    flex-direction: column;
+    background: #7b7b7b58;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 -10px 10px #00000010;
+    border: 1px solid #ffffff20;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: bottom 0.5s;
+    transition-delay: 0.5s;
+    overflow: hidden;
+}
+
+.gallery .card:hover .content{
+    bottom: 0px;
+    transition-delay: 0s;
+    overflow: hidden;
+}
+
+.gallery .card .content .contentBx h3{
+    color: #0d0d31;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition-delay: 0.6s;
+    background: -webkit-linear-gradient(#01094f, #0303ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.gallery .card:hover .content .contentBx h3{
+    opacity: 1;
+    transform: translateY(0px);   
+}
+
+.gallery .card  .content .contentBx h3 span{
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.gallery .card  .content .sci{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery .card  .content .sci li{
+    list-style: none;
+    margin: 0 5px;
+    transform: translateY(40px);
+    transition: .5s;
+    opacity: 0;
+    transition-delay: calc(0.2s * var(--i));
+}
+
+.gallery .card:hover  .content .sci li{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.gallery .card  .content .sci li ion-icon{
+    color: #fcf800;
+}
+
+@media screen and ( max-width:1350px) {
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 300px 300px 300px;
+        gap: 1rem;
+        margin: 30px 0 60px 0;
+        padding: 0;
+    }
+    .gallery .card{
+        height: 200px;
+    }    
+}
+
+@media screen and ( max-width:950px) {
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 300px 300px;
+        gap: 1rem;
+        margin: 30px 0 60px 0;
+        padding: 0;
+    }
+    .gallery .card{
+        height: 200px;
+    } 
+    
+    .head h1{
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        color: #0052D4;
+    }
+}
+
+@media screen and ( max-width:650px) {
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 300px;
+        gap: 1rem;
+        margin: 30px 0 60px 0;
+        padding: 0;
+    }
+
+    .gallery .card{
+        height: 200px;
+    } 
+    
+    .head h1{
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        color: #0052D4;
+    }
+}
+
+@media screen and ( max-width:350px) {
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 200px;
+        gap: 1rem;
+        margin: 30px 0 60px 0;
+        padding: 0;
+    }
+    
+    .head h1{
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        color: #0052D4;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 50px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #c2c3c4;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    border-radius: 150px;
+  }

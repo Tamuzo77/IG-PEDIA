@@ -1,0 +1,1968 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Montserrat&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital@0;1&display=swap'); */
+*
+{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    outline: none;
+}
+body
+{
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar
+{
+    width: 1px;
+  
+}
+.Shadow_of_pages
+{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.792);
+}
+/* gestion du retour sur bar de recherche */
+/* 
+.loader_container
+{
+    position: fixed;
+    width: 100%;
+    height: 1000%;
+    background: rgb(245, 246, 248);
+    top: 0%;
+    left: 0%;
+    z-index: 1000;
+    transition: all 1s ease;
+}
+.loader_container.hidden
+{
+    opacity: 0;
+    visibility: hidden;
+}
+.loader
+{
+    width: 100px;
+    height: 100px;
+    border: 5px solid rgba(231, 230, 230, 0);
+    border-top: 5px solid rgb(0, 51, 205);
+    border-radius:50%;
+    box-shadow: 0px 0px 6px 2px rgb(165, 165, 165);
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%,-50%);
+    animation: loader 1s linear infinite;
+} */
+@keyframes loader{
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%
+    {
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+    html
+    {
+        width: auto;
+        overflow-x: hidden;
+    }
+/* Gestion de la nav bar */
+.nav_bar
+{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background: rgb(0, 51, 205);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 2;
+}
+#retour_search_bloc_responsive
+    {
+     display: none;
+     width: 100%;
+     height: 35px;
+     /* border: 1px solid black; */
+     font-size:15px;
+    }
+    #retour_search
+    {
+     width: 23%;
+     height: 90%;
+     display: flex;
+     justify-content: space-around;
+     margin: 3px 0px 3px 10px;
+     border-radius: 5px;
+     border: 1px solid rgb(0, 51, 205);
+     cursor: pointer;
+    }
+    #retour_search div 
+    {
+         display: flex;
+         align-items: center;
+         /* border: 1px solid black; */
+         width: auto;
+         line-height: 0;
+         font-weight: bold;
+         color: rgb(0, 51, 205);
+    }
+    #retour_search i
+    {
+         display: flex;
+         height: 100%;
+         align-items: center;
+         font-size: 14px;
+         color: rgb(0, 51, 205);
+         font-weight: bold;
+    }
+.menu_responsive
+{
+    display: none;
+}
+
+.firstpart
+{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.firstpart img
+{
+    width: 170px;
+    height: 80%;
+}
+.secondpart 
+{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secondpart .search_input
+{
+    width: 80%;
+    height: 30px;
+    outline: none;
+    border: 0px;
+    border-radius: 14px 0px 0px 14px;
+    padding-left: 15px;
+}
+.secondpart .search_btn
+{
+    width: 20%;
+    height: 30px;
+    border: 0px;
+    background-color: white;
+    border-radius: 0px 14px 14px 0px;
+    cursor: pointer;
+}
+.bloc_icon_search_responsive
+{
+    display: none;
+}
+.thirdpart_2 
+{
+    width: 30%;
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.thirdpart_2 a,.thirdpart_2 div 
+{
+    width: 33.3%;
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.thirdpart_2 div div
+{
+    width: 45px;
+    height: 45px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+}
+.profil_picture a img 
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.thirdpart_2 div div:hover
+{
+    background-color: rgba(0, 0, 0, 0.43);
+}
+.thirdpart 
+{
+    position: absolute;
+    top: 0%;
+    right: 0;
+    width: 400px;
+    height: 100vh; 
+    overflow: scroll;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin-right: -100%;
+    background-color: rgb(244, 244, 244);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+.thirdpart::-webkit-scrollbar
+{
+    width: 5px;
+}
+.thirdpart::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.9); /* color of the tracking area */
+  }
+  .thirdpart::-webkit-scrollbar-thumb {
+    background-color: rgb(19, 19, 19); /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    /* border: 3px solid rgb(0, 0, 0); creates padding around scroll thumb */
+  }
+.thirdpart.menu_hamburger_desktop
+{
+    transition: all 0.2s ease;
+    margin-right: 0%;
+}
+.exit_title,.bloc_exit .exit_icon
+{
+    display: none;
+}
+.bloc_exit
+{
+    display: flex;
+    align-items: center;
+  
+}
+.bloc_exit .menu_hambuger_exit
+{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    
+}
+.block_menu_hambuger_exit
+
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+    margin: 0px 20px 0px 25px;
+}
+.block_menu_hambuger_exit:hover
+{
+    background-color: rgba(0, 0, 0, 0.43);
+}
+.logo_menu
+{
+    width: 200px;
+    height: auto;
+}
+.bloc_exit .logo_menu img
+{
+    width: 130px;
+    height: 55px;
+}
+.one:first-child
+{
+    margin-top: 5px;
+}
+
+/* gestion des notifications */
+.category_notified
+{
+    display :flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+} 
+.notified
+{
+    margin-top: 15px;
+    color: rgb(0, 0, 0);
+    padding: 10px 0px 10px 30px;
+    /* border-bottom: 1px solid rgb(0, 0, 0); */
+}
+.notified_text
+{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 5px 10px 5px;
+    transition: all 0.4s ease;
+    border-radius: 5px;
+}
+.notified .bells ,.menu_desktop_content i 
+{
+    display: inline;
+   font-size: 15px;
+   color: rgb(0, 0, 0);
+   padding: 0px 7px 0px 0px;
+}
+
+/* fin gestion des notifications */
+
+.category_menu
+{
+    color: rgb(0, 0, 0);
+}
+.container_category
+{
+    height: 50px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.title_category 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.main_title
+{
+    /* border-bottom: 1px solid rgb(255, 255, 255); */
+    padding: 10px 0px 10px 25px;
+
+}
+.title_category  a:hover,.notified_text:hover,.menu_desktop_content a:hover,.profil  a:hover
+{
+    background-color: rgb(200, 200, 200);
+}
+.title_category  a 
+{
+    padding: 10px 5px 10px 5px;
+    width: auto;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: all 0.4s ease;
+    border-radius: 5px;
+}
+.container_under_category .title_category  a 
+{
+    width: auto;
+    margin-left: 40px;
+    padding: 10px 5px 10px 5px;
+}
+.notified_text:hover ,.container_under_category .title_category  a:hover,.profil  a:hover,.menu_desktop_content a:hover ,.title_category  a:hover
+{
+    letter-spacing: 1px;
+} 
+.container_under_category .title_category div
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.title_category div 
+{
+    transform: rotate(-90deg);
+    position: relative;
+    width: 15px;
+    height: 15px;
+}
+.menu_deroulant_div
+{
+    padding-top:40px ;
+    /* border: 1px solid black; */
+}
+.deroulant1, .deroulant2,.deroulant3, .deroulant4,.deroulant5, .deroulant6,.deroulant7, .deroulant8
+{
+    display: inline-block;
+    transition: transform 0.5s ease;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+.profil{
+    padding: 10px 0px 10px 30px;
+    /* border-bottom: 1px solid rgb(255, 255, 255); */
+}
+.profil i 
+{
+    display: inline;
+    padding: 0px 7px 0px 0px;
+    color: rgb(0, 0, 0);
+}
+.profil  a
+{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 5px 10px 5px;
+    transition: all 0.4s ease;
+    border-radius: 5px;
+}
+.menu_desktop_content
+{
+    padding: 10px 0px 10px 30px;
+}
+          
+.menu_desktop_content a 
+{
+    font-size: 15px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 10px 5px 10px 5px;
+    transition: all 0.4s ease;
+    border-radius: 5px;
+}
+.menu_desktop_icon,.exit_title
+{
+    display: none;
+}
+/* fin gestion de nav bar */
+/* le carrousel d'acceuil */
+.container
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+.carrousel_container
+{
+    width: 1000px;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(138, 165, 244);
+    border-radius: 20px;
+ 
+}
+  swiper-container {
+    width: 500px;
+    height: 550px;
+    z-index: 0;
+  }
+
+  swiper-slide {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(138, 165, 244);
+    /* border: 1px solid black; */
+    z-index: 0;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    z-index: 0;
+  }
+/* fin du carrousels d'aceuil */
+/* Les catégories*/
+#categorie
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    width: 70%;
+    border-radius: 5px 5px 0px 0px;
+    height: 530px;
+    border-bottom: 3px solid rgb(0, 51, 205);
+    border-right: 0.5px solid rgb(229, 229, 229);
+    box-shadow: -5px -5px 5px rgb(229, 229, 229);
+}
+.img_categorie_1
+{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.image
+{
+    width: 220px;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    /* border: 1px solid black; */
+}
+.text
+{
+    text-align: center;
+    font-weight: bold;
+}
+.img{
+    width: 220px;
+    height: 200px;
+}
+.link_categorie
+{
+    text-decoration: none;
+    color: black;
+}
+.image:hover 
+{
+    cursor: pointer;
+    transform: scale(1.05);
+    font-style: italic;
+}
+.img_categorie_2
+{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#title_categorie
+{
+    width: 70%;
+    margin-top: 100px;
+    margin-left: 15%;
+    padding: 15px;
+    font-size: large;
+}
+/* fin des catégories */
+/* Gestion du bloc téléchargement */
+ .swiper-container , .cours_dispo_categorie
+  {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid black; */
+    align-self: center;
+  }
+
+.bloc_telechargement , .cours_disponible
+{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 360px;
+    border-bottom: 3px solid rgb(0, 51, 205);
+    margin: auto;
+}
+.bloc_telechargement h1,.cours_disponible h1
+{
+    width: 86%;
+    align-self: center;
+    font-size: 35px;
+    font-weight: bolder;
+    margin: 20px 0px 20px 0px;
+    font-family: "Kanit";
+
+}
+.bloc_telechargement h1
+{
+    letter-spacing: 2px;
+}
+.bloc_telechargement .block_video 
+{
+    width: 20%;
+    cursor: pointer;
+    
+    text-decoration: none;
+    color: black;
+}
+.bloc_telechargement .block_video:hover  .vidéo img {
+    transform: scale(1.05);
+    border-radius: 0px;
+}
+.bloc_telechargement .block_video .vidéo
+{
+    width: 100%;
+    /* border: 1px ridge rgb(255, 0, 0); */
+}
+.bloc_telechargement .block_video .vidéo img 
+{
+    width: 100%;
+    height: 130px;
+    border-radius: 10px;
+    transition: all 0.6s ease;
+}
+.title_vidéo
+{
+    text-align: start;
+    width: 100%;
+    font-size: 13px;
+    font-weight:bolder;
+    font-family: "Kanit";
+}
+.author
+{
+    text-align: start;
+    padding: 5px 0px 5px 0px;
+    font-size: 10px;
+    color: rgb(62, 62, 62);
+}
+.rateUs_vues
+{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(62, 62, 62);
+}
+.rateUs_vues div
+{
+    width: 50%;
+    /* border: 1px solid black; */
+}
+.rateUs_vues .stars,.rateUs_vues .stars div 
+{
+    display: flex;
+    align-items: center;
+} 
+.rateUs_vues .stars div ,.rateUs_vues .vues
+{
+    width: auto;
+    padding: 2px 10px 0px 5px;
+    font-size: 14px;
+    color: orangered;
+}
+.rateUs_vues .stars i 
+{
+    color: orangered;
+}
+.container_explore
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+#div_explore
+{
+    width:auto;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#div_explore:hover .read{
+    opacity: 1;
+    color: rgb(0, 51, 205);
+}
+#div_explore:hover .explore
+{
+    transform: rotate(180deg);
+    
+    border: 1px solid rgb(0, 51, 205);
+}
+.explore
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(132, 132, 132);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+#div_explore:hover .explore .icon_explore
+{
+    color: rgb(0, 51, 205);
+}
+.icon_explore
+{
+    transform: rotate(90deg);
+    color: black;
+    
+}
+
+#div_explore .read
+{
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.read a
+{
+    text-decoration: none;
+    color: rgb(0, 51, 205);
+}
+/* Fin gestion du bloc téléchargement */
+/* Gestion des cours récents  */
+.cours_disponible h1
+{
+    width: 82%;
+    align-self: center;
+    font-size: 35px;
+    font-weight: bolder;
+    margin: 20px 0px 20px 0px;
+    font-family: "Kanit";
+
+}
+    .cours_disponible
+    {
+        border: 0px;
+        height: 600px;
+        width: 100%;
+        
+    }
+    .cours_dispo_categorie
+    {
+        /* border: 1px solid black; */
+        width: 95%;
+       
+    }
+    .cours_recent
+    {
+        width: 23%;
+        height:70%;
+        border: 1px solid rgb(236, 224, 224);
+        border-radius: 5px;
+        transition: transform 0.4s ease;
+        /* cursor: pointer; */
+        /* box-shadow: 2px 2px 1px rgb(180, 176, 176); */
+    
+    }
+    .cours_recent:hover
+    {
+        transform: scale(0.98);
+    }
+    .cours_recent img
+    {
+        width: 100%;
+        height: 70px;
+        border-radius: 5px 5px 0px 0px;
+    }
+    .cours_title_authors
+    {
+        width: 100%;
+        height: 55%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .cours_title
+    {
+        font-family: "Kanit";
+        font-size: 20px;
+        font-weight: bolder;
+        padding-left: 10px;
+    }
+    .cours_title .cours_author
+    {
+        font-size: 13px;
+        font-weight: normal;
+    }
+    .bootcamp
+    {
+        width: 75px;
+        background-color: rgb(238, 238, 238);
+        font-size: 12px;
+        margin-left: 10px;
+        padding: 4px 5px 4px 5.5px;
+        border-radius: 4px;
+    }
+    .view_program
+    {
+        display: flex;
+        height: 72px;
+        font-size: 13.5px;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(238, 238, 238);
+        border-top: 1px solid rgb(200, 200, 200);
+        transition: background-color 0.4s ease;
+        border-radius: 0px 0px 5px 5px;
+    }
+    .view_program:hover
+    {
+        cursor: pointer;
+        background-color: rgb(185, 185, 185);
+    }
+    .view_program a
+    {
+        text-decoration: none;
+        color: black;
+    }
+    .view_program a span{
+        font-weight: bolder;
+    }
+    .bloc_more_cours
+    {
+        display: flex;
+        justify-content: center;
+        
+        width: 93%;
+        align-self: center;
+    }
+    .explore_boot
+    {
+        width: 250px;
+        padding: 12px;
+        background-color: rgb(200, 200, 200);
+        border-radius: 4px;
+        text-decoration: none;
+        color: black;
+        transition: background-color 0.4s ease;
+        /* border: 1px solid black; */
+    }
+    .explore_boot:hover
+    {
+        background-color: rgb(145, 145, 145);
+    }
+/* Fin gestion des cours récents  */
+/* debut footer */
+footer
+{
+    width: auto;
+    height: 490px;
+    background: rgb(0, 51, 205);
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+}
+/* Gestion de la premiere partie du footer  */
+.liens_footer
+{
+    display: flex;
+    justify-content: space-around;
+    
+    width: 100%;
+    height: 80%;
+    /* border: 1px solid black ; */
+}
+
+.contenu
+{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black ; */
+
+}
+.contenu h1 , .aide h1
+{
+    margin-top: 40px ;
+    margin-left: 30px;
+    color: white;
+    font-size: 16px;
+}
+.contenu a , .aide a 
+{
+    width:fit-content;
+    position: relative;
+    text-decoration: none;
+    transition: letter-spacing 0.4s ease;
+    color: white;
+    margin-top: 30px ;
+    margin-left: 30px;
+    font-size: 14px;
+    /* border: 1px solid black; */
+}
+.contenu a::after , .aide a::after
+{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    border-radius: 1px;
+    transform: scale(0);
+    transition: transform 0.4s ease-in-out;
+} 
+.contenu a:hover::after , .aide a:hover::after
+{
+    transform: scale(1);
+}
+.contenu a:hover , .aide a:hover
+{
+    letter-spacing: 0.5px;
+} 
+.aide
+{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black ;    */
+}
+.trait
+{
+    width: 88%;
+    margin: auto;
+    height: 1px;
+    background: linear-gradient(120deg,rgb(113, 110, 110),rgb(255, 255, 255),rgb(96, 93, 93));
+}
+/* gestion de la deuxieme partie du footer  */
+.icone_footer
+{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: 19%;
+    width: 88%;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+.langage
+{
+    display: flex;
+    width: 18.56%;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid rgb(0, 0, 0) ; */
+}
+#lang
+{
+    outline: none;
+    border: 0px;
+    background: rgb(0, 51, 205);
+    color: white;
+}
+.icon
+{
+   font-size: 20px;
+}
+/* Gestion de la deuxieme partie de la deuxieme partie du footer parceque oui cette dernière est subdivisé en trois partie donc trois div */
+.copyrigth
+{
+    width: 50%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Gestion de la troisième partie */
+.icon_div
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 24%;
+    /* border: 1px solid black; */
+}
+.icon_div a
+{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.4s ease ; 
+    /* border: 1px solid black; */
+}
+.icon_div a:hover 
+{
+    transform: scale(1.07);
+}
+.icon_div a img
+{
+    width:35px;
+    height: 35px;
+    border-radius: 0%;
+}
+.icon_div a img[alt="Twitter icon "]
+{
+    background: white;
+    border-radius: 50%;
+}
+/* fin footer  */
+@media  screen and (max-width: 280px) 
+{
+html
+{
+    overflow-x: hidden;
+}
+/* La nav bar responsive */
+.nav_bar
+{
+    height: 55px;
+    z-index: 2;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+.menu_responsive,.bloc_icon_search_responsive
+{
+    width: 17%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+.bloc_icon_search_responsive
+{
+    width: 40%;
+    justify-content: flex-end;
+}
+.menu_responsive i,.bloc_icon_search_responsive i
+{
+    font-size: 22px;
+    color: white;
+}
+.secondpart,.secondpart button
+{
+   display: none;
+}
+.secondpart .search_input
+{
+    border-radius: 5px;
+}
+.thirdpart_2
+{
+    display: none;
+}
+.thirdpart_2 div div:hover
+{
+    background-color: rgba(0, 0, 0, 0.43);
+}
+.thirdpart 
+{
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100vw;
+    height: 100vh; 
+    overflow: scroll;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin-left: -100%;
+    background-color: rgb(244, 244, 244);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+.thirdpart.menu_hamburger_desktop
+{
+    transition: all 0.2s ease;
+    margin-left: 0%;
+}
+.bloc_exit .logo_menu img
+{
+    width: 100px;
+    height: 35px;
+}
+.firstpart
+{
+    width: 40%;
+}
+.firstpart img
+{
+    width: 130px;
+    height: 50px;
+}
+/* fin  */
+/* Partie carrousel responsive */
+.carrousel_container
+{
+    width: 250px;
+    height: 270px; 
+    border-radius: 7px;
+}
+  swiper-container {
+    width: 250px;
+    height: 270px;
+    border-radius: 7px;
+  }
+
+  swiper-slide {
+    width: 250px;
+    height: 250px;
+    border-radius: 7px;
+  }
+
+  swiper-slide img {
+    width: 250px;
+    height: 250px;
+  }
+/* fin partie carrousel responsive */
+
+/* Gestion de la partie vidéo */
+.bloc_telechargement 
+{
+  width: 100%;
+  height: 900px;
+}
+.swiper-container , .cours_dispo_categorie
+{
+  width:100%;
+  height: 800px;
+  flex-direction: column;
+}
+.bloc_telechargement h1,.cours_disponible h1
+{
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+.bloc_telechargement .block_video 
+{
+  width: 80%;
+}
+/*fin  Gestion de la partie vidéo */
+
+/* Gestion  cours dispo*/
+.cours_disponible h1
+{
+    width:100%;
+    font-size: 20px;
+    text-align: center;
+}
+    .cours_disponible
+    {
+        border: 0px;
+        height:1200px ;
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    .cours_dispo_categorie
+    {
+        width: 100%;
+        height: 1300px;
+    }
+    .cours_recent
+    {
+        width: 80%;
+        height:300px;
+        display: flex;
+        flex-direction: column;
+       justify-content: space-between;
+    
+    }
+    .last
+    {
+        display: none;
+    }
+/* fin gestion cours dispo */
+/* geestion categorie responsive */
+
+#title_categorie
+{
+    margin: 0px;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}
+#categorie
+{
+    height: auto;
+    font-size: 15px;
+    width: 100%;
+
+}
+.img_categorie_1
+{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 30px;
+}
+.img_categorie_2
+{
+    display: none;
+}
+.image
+{
+    width: 300px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img
+{
+    width: 220px;
+    height: 220px;
+}
+.text
+{
+    width: 250px;
+}
+/* fin gestion */
+/* Gestion de la responsivité du footer */
+        footer
+        {
+            width: 100%;
+            height: auto;
+            font-family: "Montserrat";
+            margin-top: 50px;
+        }
+        /* Gestion de la premiere partie du footer  */
+        .liens_footer
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            /* border: 1px solid black ; */
+        }
+    
+        .contenu,.aide
+        {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid black ; */
+    
+        }
+        .contenu h1 , .aide h1
+        {
+            width: 50%;
+            margin-left:0px;
+            margin-top: 40px ;
+            /* border: 1px solid black; */
+            color: white;
+            font-size: 15px;
+        }
+        .contenu a , .aide a 
+        {
+            width: auto;
+            text-decoration: none;
+            color: white;
+            margin-top: 30px ;
+            margin-left: 0px;
+            font-size: 13px;
+            /* border: 1px solid black; */
+        }
+        .aide
+        {
+     
+            width: 100%;
+            /* border: 1px solid black ;    */
+        }   
+        .trait
+        {
+            width:100%;
+            margin: auto;
+            height: 1px;
+            background: linear-gradient(120deg,rgb(113, 110, 110),rgb(255, 255, 255),rgb(96, 93, 93));
+        }
+        .icone_footer
+        {
+            display: flex;
+            /* border: 1px solid black;  */
+            width: 100%;
+            justify-content: space-between;
+            height: auto;
+            min-height: 50px;
+            
+        }
+        /* gestion de la deuxieme partie du footer  */
+        .langage
+        {
+            display: none;
+           
+        }
+     
+        /* Gestion de la deuxieme partie de la deuxieme partie du footer parceque oui cette dernière est subdivisé en trois partie donc trois div */
+        .copyrigth
+        {
+            width: 70%;
+            /* border: 1px solid black; */
+            font-size: 13px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+       
+        .icon_div
+        {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 30%;
+            /* border: 1px solid black; */
+        }
+        .icon_div a
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            /* border: 1px solid black; */
+        }
+        .icon_div a img
+        {
+            width: 20px;
+            height: 20px;
+            border-radius: 0%;
+        }
+        .icon_div a img[alt="Twitter icon "]
+        {
+            border-radius: 50%;
+            background: white;
+        }
+        .icon_div a img[alt="instagram icon "]
+        {
+           border-radius: 0%;
+        }
+        /* fin footer */
+}
+@media screen and (min-width : 281px) and (max-width: 500px)
+{
+    html
+{
+    overflow-x: hidden;
+}
+/* La nav bar responsive */
+.nav_bar
+{
+    height: 55px;
+    z-index: 2;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+.menu_responsive,.bloc_icon_search_responsive
+{
+    width: 17%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+.bloc_icon_search_responsive
+{
+    width: 40%;
+    justify-content: flex-end;
+}
+.menu_responsive i,.bloc_icon_search_responsive i
+{
+    font-size: 22px;
+    color: white;
+}
+.secondpart,.secondpart button
+{
+   display: none;
+}
+.secondpart .search_input
+{
+    border-radius: 5px;
+}
+.thirdpart_2
+{
+    display: none;
+}
+.thirdpart_2 div div:hover
+{
+    background-color: rgba(0, 0, 0, 0.43);
+}
+.thirdpart 
+{
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100vw;
+    height: 100vh; 
+    overflow: scroll;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin-left: -100%;
+    background-color: rgb(244, 244, 244);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+.thirdpart.menu_hamburger_desktop
+{
+    transition: all 0.2s ease;
+    margin-left: 0%;
+}
+.bloc_exit .logo_menu img
+{
+    width: 100px;
+    height: 35px;
+}
+.firstpart
+{
+    width: 40%;
+}
+.firstpart img
+{
+    width: 130px;
+    height: 50px;
+}
+/* fin  */
+/* Partie carrousel responsive */
+.carrousel_container
+{
+    width: 300px;
+    height: 320px; 
+    border-radius: 7px;
+}
+  swiper-container {
+    width: 300px;
+    height: 320px;
+    border-radius: 7px;
+  }
+
+  swiper-slide {
+    width: 300px;
+    height: 320px;
+    border-radius: 7px;
+  }
+
+  swiper-slide img {
+    width: 300px;
+    height: 300px;
+  }
+/* fin partie carrousel responsive */
+
+/* Gestion de la partie vidéo */
+.bloc_telechargement 
+{
+  width: 100%;
+  height: 900px;
+}
+.swiper-container , .cours_dispo_categorie
+{
+  width:100%;
+  height: 800px;
+  flex-direction: column;
+}
+.bloc_telechargement h1,.cours_disponible h1
+{
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+.bloc_telechargement .block_video 
+{
+  width: 80%;
+  max-width: 250px;
+}
+/*fin  Gestion de la partie vidéo */
+
+/* Gestion  cours dispo*/
+.cours_disponible h1
+{
+    width:100%;
+    font-size: 20px;
+    text-align: center;
+}
+    .cours_disponible
+    {
+        border: 0px;
+        height:1200px ;
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    .cours_dispo_categorie
+    {
+        width: 100%;
+        height: 1300px;
+    }
+    .cours_recent
+    {
+        width: 80%;
+        max-width: 300px;
+        height:300px;
+        display: flex;
+        flex-direction: column;
+       justify-content: space-between;
+    
+    }
+    .last
+    {
+        display: none;
+    }
+/* fin gestion cours dispo */
+/* geestion categorie responsive */
+
+#title_categorie
+{
+    margin: 0px;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}
+#categorie
+{
+    height: auto;
+    font-size: 15px;
+    width: 100%;
+
+}
+.img_categorie_1
+{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 30px;
+}
+.img_categorie_2
+{
+    display: none;
+}
+.image
+{
+    width: 300px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img
+{
+    width: 220px;
+    height: 220px;
+}
+.text
+{
+    width: 250px;
+}
+.bloc_telechargement .block_video:hover  .vidéo img {
+    transform: scale(1);
+}
+    /* debut footer */
+    footer
+       {
+           width: 100%;
+           height: auto;
+           font-family: "Montserrat";
+   
+       }
+       /* Gestion de la premiere partie du footer  */
+       .liens_footer
+       {
+           display: flex;
+           flex-direction: column;
+           justify-content: space-around;
+           width: 100%;
+           height: auto;
+           margin-bottom: 20px;
+           /* border: 1px solid black ; */
+       }
+   
+       .contenu,.aide
+       {
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           /* border: 1px solid black ; */
+   
+       }
+       .contenu h1 , .aide h1
+       {
+           width: 50%;
+           margin-left:0px;
+           margin-top: 40px ;
+           /* border: 1px solid black; */
+           color: white;
+           font-size: 16px;
+       }
+       .contenu a , .aide a 
+       {
+           width: auto;
+           text-decoration: none;
+           color: white;
+           margin-top: 30px ;
+           margin-left: 0px;
+           font-size: 14px;
+           /* border: 1px solid black; */
+       }
+       .aide
+       {
+    
+           width: 100%;
+           /* border: 1px solid black ;    */
+       }   
+       .trait
+       {
+           width:100%;
+           margin: auto;
+           height: 1px;
+           background: linear-gradient(120deg,rgb(113, 110, 110),rgb(255, 255, 255),rgb(96, 93, 93));
+       }
+       .icone_footer
+       {
+           display: flex;
+           /* border: 1px solid black;  */
+           width: 100%;
+           justify-content: space-between;
+           height: auto;
+           min-height: 50px;
+           
+       }
+       /* gestion de la deuxieme partie du footer  */
+       .langage
+       {
+           display: none;
+          
+       }
+    
+       /* Gestion de la deuxieme partie de la deuxieme partie du footer parceque oui cette dernière est subdivisé en trois partie donc trois div */
+       .copyrigth
+       {
+           width: 70%;
+           /* border: 1px solid black; */
+           font-size: 14px;
+           font-weight: bold;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           
+       }
+      
+       .icon_div
+       {
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           width: 30%;
+           /* border: 1px solid black; */
+       }
+       .icon_div a
+       {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           width: 20px;
+           height: 20px;
+           /* border: 1px solid black; */
+       }
+       .icon_div a img
+       {
+           width: 20px;
+           height: 20px;
+           border-radius: 0%;
+       }
+       .icon_div a img[alt="Twitter icon "]
+       {
+           border-radius: 50%;
+           background: white;
+       }
+       .icon_div a img[alt="instagram icon "]
+       {
+          border-radius: 0%;
+       }
+       /* Responsive meilleurs catégories */
+       #title_categorie
+       {
+           margin: 0px;
+           width: 100%;
+           font-size: 16px;
+           text-align: center;
+           margin-top: 10px;
+           /* border: 1px solid black; */
+       }
+       #categorie
+       {
+           height: auto;
+           font-size: 16px;
+           width: 100%;
+   
+       }
+       .img_categorie_1
+       {
+           display: flex;
+           flex-direction: column;
+           height: auto;
+          
+           margin-bottom: 30px;
+       }
+       .img_categorie_2
+       {
+           display: none;
+       }
+       .image
+       {
+           width: 300px;
+           height: 270px;
+           
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+       }
+       .img
+       {
+           width: 220px;
+           height: 220px;
+       }
+       .text
+       {
+           width: 250px;
+       }
+    /* fin footer */
+}
+@media screen and (min-width : 501px) and (max-width: 700px)
+{
+    html
+    {
+        width: auto;
+        overflow-x: hidden;
+    }
+    /* Gestion de la nav bar  */
+
+    .firstpart
+    {
+        width: 20%;
+        /* border: 1px solid black; */
+    }
+    .firstpart img
+    {
+        width: 130px;
+        height: 50px;
+    }
+    /* fin gestion nav bar  */
+    /* gestion des vidéos et cours récents */
+    .last
+    {
+        display: none;
+    }
+    .bloc_telechargement 
+    {
+      width: 100%;
+      height: 900px;
+    }
+    .swiper-container , .cours_dispo_categorie
+    {
+      width:100%;
+      height: 800px;
+      flex-direction: column;
+    }
+    .bloc_telechargement h1,.cours_disponible h1
+    {
+      width: 100%;
+      font-size: 20px;
+      text-align: center;
+    }
+    .bloc_telechargement .block_video 
+    {
+      width: 90%;
+      max-width: 300px;
+    }
+    .cours_disponible h1
+{
+    width:100%;
+    font-size: 20px;
+    text-align: center;
+}
+    .cours_disponible
+    {
+        border: 0px;
+        height:1200px ;
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    .cours_dispo_categorie
+    {
+        width: 100%;
+        height: 1300px;
+    }
+    .cours_recent
+    {
+        width: 80%;
+        max-width: 300px;
+        height:300px;
+        display: flex;
+        flex-direction: column;
+       justify-content: space-between;
+    
+    }
+    .last
+    {
+        display: none;
+    }
+    /* gestion des catégories */
+    #title_categorie
+    {
+        margin: 0px;
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10px;
+        /* border: 1px solid black; */
+    }
+    #categorie
+    {
+        height: auto;
+        font-size: 16px;
+        width: 100%;
+
+    }
+    .img_categorie_1
+    {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+       
+        margin-bottom: 30px;
+    }
+    .img_categorie_2
+    {
+        display: none;
+    }
+    .image
+    {
+        width: 400px;
+        height: 370px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .img
+    {
+        width: 320px;
+        height: 320px;
+    }
+    .text
+    {
+        width: 250px;
+    }
+    /* debut footer */
+    footer
+    {
+        width:100%;
+
+    }
+    .langage
+    {
+        display: none;
+       
+    }
+    .contenu h1 , .aide h1
+    {
+        margin-top: 40px ;
+        margin-left: 0px;
+        font-size: 13px;
+
+    }
+    .contenu a , .aide a 
+    {
+
+        margin-left:0px;
+        font-size: 12px;
+    }
+    /* fin footer */
+    /*  Gestion de la search bar*/
+    .secondpart .search_input
+{
+    width: 70%;
+}
+.bloc_telechargement .block_video:hover  .vidéo img {
+    transform: scale(1);
+}
+    /* fin gestion de la search bar */
+}
+
+@media screen and (min-width : 701px) and (max-width: 1150px)
+{
+    html
+    {
+        width: auto;
+        overflow-x: hidden;
+    }
+    /* Gestion de la nav bar  */
+
+    .firstpart
+    {
+        width: 20%;
+        
+        /* border: 1px solid black; */
+    }
+    .firstpart img
+    {
+        width: 130px;
+        height: 50px;
+    }
+    /* fin gestion nav bar  */
+    /* gestion des vidéos et cours récents */
+    .last
+    {
+        display: none;
+    }
+    .swiper-container , .cours_dispo_categorie
+    {
+      width: 100%;
+      height: 100%;
+    }
+    .bloc_telechargement .block_video ,.cours_recent
+    {
+        width: 30%;
+        
+    }
+    .bloc_telechargement .block_video
+    {
+        max-width: 200px;
+    }
+    .bloc_telechargement .block_video .vidéo img 
+    {
+        width: 100%;
+        
+        height: 120px;
+    }
+    .bloc_telechargement .block_video:hover  .vidéo img {
+        transform: scale(1);
+    }
+    /* gestion des catégories */
+    #categorie
+    {
+        height: auto;
+        font-size: 16px;
+        width: 100%;
+
+    }
+   
+    /* Debut footer */
+    footer
+    {
+        width:100vw;
+    }
+    .langage
+    {
+        display: none;
+    
+    }
+    .contenu h1 , .aide h1
+    {
+        margin-top: 40px ;
+        margin-left: 0px;
+
+    }
+    .contenu a , .aide a 
+    {
+
+        margin-left:0px;
+
+    }
+    /* fin footer */
+}

@@ -23,15 +23,7 @@
 
 <body class="body">
     {{-- Start NavBar --}}
-    <x-user.navbar />
-    {{-- Navbar Responsive --}}
-    <div id="retour_search_bloc_responsive">
-        <div id="retour_search">
-            <i class="fa-solid fa-chevron-left"></i>
-            <div>retour</div>
-        </div>
-    </div>
-    {{-- End Navbar --}}
+    <x-customer.navbar />
 
     {{-- Carrousel Start --}}
     <div class="container">
@@ -49,83 +41,8 @@
     {{-- Carrousel End --}}
 
     {{-- Download Bloc --}}
-    <div class="bloc_telechargement">
-        <h1>Mes Téléchargements</h1>
-        <div class="swiper-container">
-            <a href="" class="block_video">
-                <div class="vidéo">
-                    <img src="storage/images/Capture d'écran 2023-03-16 010920.png"
-                    alt="youtube_image">
-                </div>
-                <div class="title_author">
-                    <div class="title_vidéo">The Complete 2023 Web Development Bootcamp</div>
-                    <div class="author">Dr Angela Yu</div>
-                </div>
-                <div class="rateUs_vues">
-                    <div class="stars">
-                        <div>4.5</div>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="vues">(2056400)</div>
-                </div>
-            </a>
+    <x-customer.douwnload-bloc :data="[1,2,3,4,5]" />
 
-            <a href="" class="block_video">
-                <div class="vidéo">
-                    <img src="storage/images/Capture d'écran 2023-03-16 010534.png"
-                    alt="youtube_image">
-                </div>
-                <div class="title_author">
-                    <div class="title_vidéo">The Complete 2023 Web Development Bootcamp</div>
-                    <div class="author">Dr Angela Yu</div>
-                </div>
-                <div class="rateUs_vues">
-                    <div class="stars">
-                        <div>4.5</div>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="vues">(2056400)</div>
-                </div>
-            </a>
-
-            <a href="" class="block_video">
-                <div class="vidéo">
-                    <img src="storage/images/Capture d'écran 2023-03-16 005455.png"
-                    alt="youtube_image">
-                </div>
-                <div class="title_author">
-                    <div class="title_vidéo">The Complete 2023 Web Development Bootcamp</div>
-                    <div class="author">Dr Angela Yu</div>
-                </div>
-                <div class="rateUs_vues">
-                    <div class="stars">
-                        <div>4.5</div>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="vues">(2056400)</div>
-                </div>
-            </a>
-
-            <a href="" class="block_video last">
-                <div class="vidéo">
-                    <img src="storage/images/Capture d'écran 2023-03-16 005143.png"
-                    alt="youtube_image">
-                </div>
-                <div class="title_author">
-                    <div class="title_vidéo">The Complete 2023 Web Development Bootcamp</div>
-                    <div class="author">Dr Angela Yu</div>
-                </div>
-                <div class="rateUs_vues">
-                    <div class="stars">
-                        <div>4.5</div>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="vues">(2056400)</div>
-                </div>
-            </a>
-
-        </div>
-    </div>
     {{-- Download Bloc end --}}
 
     {{-- Explore Bloc Start --}}
@@ -138,7 +55,7 @@
         </div>
     </div>
     {{-- Explore Bloc End --}}
-
+    <x-customer.cours-bloc :data="[]" />
     {{-- Cours Dispo Start --}}
     <div class="cours_disponible">
         <h1>Cours Récents</h1>

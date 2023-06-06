@@ -1,5 +1,5 @@
 @props(['title', 'toggled', 'num'])
-<div class="container_category {{ $num ?? '' }}">
+<div class="container_category {{ $num ?? 'one' }}">
     <h5 class="title_category main_title">
         <a  {{ $attributes(['class' => '', 'href'=>'']) }}>{{ ucwords($title  ?? ' Attribut titre Oublié') }}</a>
 

@@ -12,4 +12,22 @@ class AdminController extends Controller
     {
         return \view('admin.dashboard');
     }
+
+    public function categories()
+    {
+        if(request()->is('admin/categories-list'))
+        {
+            return \view('admin.categories.list');
+        }
+        return \view('admin.categories.grid');
+    }
+
+    public function courses()
+    {
+        if(request()->is('admin/courses-list'))
+        {
+            return \view('admin.courses.list');
+        }
+        return \view('admin.courses.grid');
+    }
 }

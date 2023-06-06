@@ -20,4 +20,14 @@ Route::get('/', function () {
 
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    //Categories
+    Route::get('categories-list', [AdminController::class, 'categories'])->name('categories-list');
+    Route::get('categories-grid', [AdminController::class, 'categories'])->name('categories-grid');
+
+
+
+    //Courses
+    Route::get('courses-list', [AdminController::class, 'courses'])->name('courses-list');
+    Route::get('courses-grid', [AdminController::class, 'courses'])->name('courses-grid');
+
 });

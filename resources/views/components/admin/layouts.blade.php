@@ -1,10 +1,11 @@
+@props(['title'=>'Title Not Found'])
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ 'Admin' }}</title>
+    <title>{{ "Admin || $title" }}</title>
      <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
@@ -25,7 +26,7 @@
             container.classList.add('container-fluid');
           }
         </script>
-       {{-- @include('admin.partials.navbars._navbar-gt-lg') --}}
+       @include('admin.partials.navbars._navbar-gt-lg')
         @include('admin.partials.navbars._navbar-v-xl')
         @include('admin.partials.navbars._navbar-gt-lg2')
 
@@ -67,7 +68,8 @@
           </div>
         </div>
       </div>
-    </main><!-- ===============================================-->
+    </main>
+    <!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
 

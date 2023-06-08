@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
       <div class="row g-3 mb-3">
         <div class="col-xxl-4">
           <div class="card h-100">

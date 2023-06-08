@@ -14,7 +14,15 @@
             @php
                 $st = strtolower($title ?? 'title');
             @endphp
-            <a {{ $attributes(['class' =>'nav-link dropdown-indicator', 'href' => "#$st", 'role'=>'button', 'data-bs-toggle' =>'collapse', 'aria-expanded' =>'false', 'aria-controls'=>$st ]) }} >
+            <a {{ $attributes([
+                               'class' =>'nav-link dropdown-indicator', 
+                               'href' => "#$st", 
+                               'role'=>'button', 
+                               'data-bs-toggle' =>'collapse', 
+                               'aria-expanded' =>'false', 
+                               'aria-controls'=>$st 
+                               ]) 
+                }} >
                 <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-{{ $icon ?? '' }}"></span></span><span class="nav-link-text ps-1">{{ $title ?? 'Title not found' }}</span></div>
             </a>
             <ul class="nav collapse" id="{{ $st }}">

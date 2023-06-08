@@ -29,6 +29,11 @@
             <x-admin.navbars.navitem href="/dede" title="Créer un Cours" />
           </x-admin.navbars.navitem>
 
+          <x-admin.navbars.navitem  title="Cours" separator="Database" :toggled="true" icon="sitemap">
+            <x-admin.navbars.navitem href="{{ route('admin.courses-list') }}" title="Ajouter Vidéos" />
+            <x-admin.navbars.navitem href="{{ route('admin.courses-grid') }}" title="Ajouter Categorie" />
+            <x-admin.navbars.navitem href="/dede" title="Créer un Cours" />
+          </x-admin.navbars.navitem>
 
           
         </x-admin.navbars.navlist>

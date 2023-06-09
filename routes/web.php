@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +31,12 @@ Route::prefix('admin')->name('admin.')->group(function(){
     //Courses
     Route::get('courses-list', [AdminController::class, 'courses'])->name('courses-list');
     Route::get('courses-grid', [AdminController::class, 'courses'])->name('courses-grid');
+    Route::get('create-course', [CourseController::class, 'create'])->name('course-create');
+
+    //Tags
+    Route::get('create-tag', [TagController::class, 'create'])->name('create-tag');
+    Route::post('store-tag', [TagController::class, 'store'])->name('store-tag');
+    Route::get('tags-table', [TagController::class, 'index'])->name('tags-table');
+    Route::get('tags/{tag}', [TagController::class, 'show'])->name('tag');
 
 });

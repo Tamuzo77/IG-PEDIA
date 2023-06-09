@@ -18,6 +18,21 @@
 <link href="{{ asset('admin/assets/css/theme.min.css') }}" rel="stylesheet" id="style-default">
 <link href="{{ asset('admin/assets/css/user-rtl.min.css') }}" rel="stylesheet" id="user-style-rtl">
 <link href="{{ asset('admin/assets/css/user.min.css') }}" rel="stylesheet" id="user-style-default">
+
+@if (request()->is('admin/course-create'))
+<link href="{{ asset('admin/vendors/dropzone/dropzone.min.css') }}" rel="stylesheet" id="user-style-default">
+<link href="{{ asset('admin/vendors/flatpickr/flatpickr.min.css') }}" rel="stylesheet" id="user-style-default">
+@endif
+<link href="{{ asset('admin/vendors/choices/choices.min.css') }}" rel="stylesheet" id="user-style-default">
+
+@if (request()->is('admin/courses-list') || request()->is('admin/categories-list') )
+<link href="{{ asset('admin/vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+<link href="{{ asset('admin/vendors/glightbox/glightbox.min.css') }}" rel="stylesheet">
+
+@endif
+
+
+
 <script>
   var isRTL = JSON.parse(localStorage.getItem('isRTL'));
   if (isRTL) {

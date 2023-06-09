@@ -26,13 +26,12 @@
             <x-admin.navbars.navitem href="{{ route('admin.courses-list') }}" title="Cours List" />
             <x-admin.navbars.navitem href="{{ route('admin.courses-grid') }}" title="Cours Grid" />
             <x-admin.navbars.navitem href="" title="Cours Details" />
-            <x-admin.navbars.navitem href="/dede" title="Créer un Cours" />
+            <x-admin.navbars.navitem href="{{ route('admin.course-create') }}" title="Créer un Cours" />
           </x-admin.navbars.navitem>
 
-          <x-admin.navbars.navitem  title="Cours" separator="Database" :toggled="true" icon="sitemap">
-            <x-admin.navbars.navitem href="{{ route('admin.courses-list') }}" title="Ajouter Vidéos" />
-            <x-admin.navbars.navitem href="{{ route('admin.courses-grid') }}" title="Ajouter Categorie" />
-            <x-admin.navbars.navitem href="/dede" title="Créer un Cours" />
+          <x-admin.navbars.navitem  title="Tag" separator="Database" :toggled="true" icon="sitemap">
+            <x-admin.navbars.navitem title="Tag Create" href="{{ route('admin.create-tag') }}"  />
+            <x-admin.navbars.navitem title="Tags Table" href="{{ route('admin.tags-table') }}"  />
           </x-admin.navbars.navitem>
 
           

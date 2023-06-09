@@ -30,4 +30,6 @@ class AdminController extends Controller
         }
         return \view('admin.courses.grid');
     }
+
+
 }

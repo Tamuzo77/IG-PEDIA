@@ -43,5 +43,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::post('store-tag', [TagController::class, 'store'])->name('store-tag');
     Route::get('tags-table', [TagController::class, 'index'])->name('tags-table');
     Route::get('tags/{tag}', [TagController::class, 'show'])->name('tag');
+    Route::get('edit-tag/{tag}', [TagController::class, 'edit'])->name('tag-edit');
+    Route::patch('update-tag/{tag}', [TagController::class, 'update'])->name('tag-update');
+    Route::delete('deltag/{tag}', [TagController::class, 'destroy'])->name('tag-delete');
 
 });

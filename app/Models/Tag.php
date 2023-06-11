@@ -12,7 +12,7 @@ class Tag extends Model
 
     protected $guarded = ['id'];
 
-    public function cours()
+    public function course()
     {
         return $this->belongsToMany(Course::class, 'courses_tags', 'tag_id', 'course_id');
     }

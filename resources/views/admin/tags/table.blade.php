@@ -1,4 +1,11 @@
 <x-admin.layouts title="Tags List">
+  @if (Session::has('success'))
+    <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
+        <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span></div>
+        <p class="mb-0 flex-1">{{ session('success') }}</p><button class="btn-close" type="button"
+            data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
     <div class="row g-3 mt-5">
         <div class="col-12">
             <nav style="--falcon-breadcrumb-divider: '»';" aria-label="breadcrumb">
@@ -6,7 +13,7 @@
                   <li class="breadcrumb-item"><a href="#">IG-PEDIA || Database</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Tags</li>
                 </ol>
-              </nav>
+            </nav>
         </div>
         <div class="col-12">
             <div class="card z-1">
@@ -44,8 +51,15 @@
                                     <div class="dropdown-menu dropdown-menu-end border py-0" style="">
                                       <div class="py-2">
                                         <a class="dropdown-item" href="{{ url("admin/tags/$tagCrypt") }}">Details</a>
-                                        <a class="dropdown-item" href="#!">Edit</a>
-                                        <a class="dropdown-item text-danger" href="#!">Delete</a></div>
+                                        <a class="dropdown-item" href="{{ url("admin/edit-tag/$tagCrypt") }}">Edit</a>
+                                          <form action="{{ route('admin.tag-delete', $tagCrypt) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="dropdown-item text-danger"  type="submit">
+                                                Delete
+                                            </button>
+                                          </form>
+                                      </div>
                                     </div>
                                   </div>
                                 </td>

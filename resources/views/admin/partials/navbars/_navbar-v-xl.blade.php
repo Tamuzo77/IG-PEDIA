@@ -19,7 +19,7 @@
           <x-admin.navbars.navitem separator="App" title="Categorie" :toggled="true" icon="sitemap">
             <x-admin.navbars.navitem href="{{ route('admin.categories-list') }}" title="Categorie List" />
             <x-admin.navbars.navitem href="{{ route('admin.categories-grid') }}" title="Categorie Grid" />
-            <x-admin.navbars.navitem href="/dede" title="Créer une Categorie" />
+            <x-admin.navbars.navitem href="{{ route('admin.category-create') }}" title="Créer une Categorie" />
           </x-admin.navbars.navitem>
 
           <x-admin.navbars.navitem  title="Cours" :toggled="true" icon="sitemap">

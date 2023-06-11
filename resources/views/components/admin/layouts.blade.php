@@ -10,6 +10,7 @@
     <!--    Favicons-->
     <!-- ===============================================-->
     @include('admin.frontend.style')
+    @livewireStyles
 </head>
 
 <body>
@@ -79,5 +80,6 @@
     <!--    JavaScripts-->
     <!-- ===============================================-->
     @include('admin.frontend.script')
+    @livewireScripts
   </body>
 </html>

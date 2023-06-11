@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Tag extends Model
 {
@@ -18,6 +19,6 @@ class Tag extends Model
 
     public function categories()
     {
-        return $this->belongsToMany();
+        return $this->belongsToMany(Category::class, 'categories_tags', 'tag_id', 'category_id');
     }
 }

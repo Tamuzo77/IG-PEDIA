@@ -170,7 +170,7 @@
         <div class="col-xxl-10 col-xl-9">
           <div class="card mb-3">
             <div class="card-header position-relative">
-              <h5 class="mb-0 mt-1">All Courses</h5>
+              <h5 class="mb-0 mt-1">All Category</h5>
               <div class="bg-holder d-none d-md-block bg-card" style="background-image:url(admin/assets/img/illustrations/corner-6.png);"></div>
               <!--/.bg-holder-->
             </div>
@@ -204,21 +204,22 @@
               </div>
             </div>
           </div>
+          @foreach ($categories as $category )
           <article class="card mb-3 overflow-hidden">
             <div class="card-body p-0">
               <div class="row g-0">
                 <div class="col-md-4 col-lg-3">
-                  <div class="hoverbox h-md-100"><a class="text-decoration-none" href="{{ asset('admin/assets/video/beach.mp4') }}" data-gallery="attachment-bg"><img class="h-100 w-100 object-fit-cover" src="{{ asset('admin/assets/img/elearning/courses/course1.png') }}" alt="" /></a>
+                  <div class="hoverbox h-md-100"><a class="text-decoration-none" href="{{ asset('admin/assets/video/beach.mp4') }}" data-gallery="attachment-bg"><img class="h-100 w-100 object-fit-cover" src="{{ asset($category->picture) }}" alt="" /></a>
                     <div class="hoverbox-content flex-center pe-none bg-holder overlay overlay-2"><img class="z-1" src="{{ asset('admin/assets/img/icons/play.svg') }}" width="60" alt="" /></div>
                   </div>
                 </div>
                 <div class="col-md-8 col-lg-9 p-x1">
                   <div class="row g-0 h-100">
                     <div class="col-lg-8 col-xxl-9 d-flex flex-column pe-x1">
-                      <div class="d-flex gap-2 flex-wrap mb-3"><span class="badge rounded-pill badge-subtle-primary"><span class="fas fa-pen-nib me-1" data-fa-transform="shrink-4"></span><span>Writing</span></span><span class="badge rounded-pill badge-subtle-success"><span class="fas fa-crown me-1" data-fa-transform="shrink-4"></span><span>Top Trainer</span></span><span class="badge rounded-pill badge-subtle-warning"><span class="fas fa-award me-1" data-fa-transform="shrink-4"></span><span>Editor’s Choice</span></span></div>
+                      <div class="d-flex gap-2 flex-wrap mb-3"><span class="badge rounded-pill badge-subtle-primary"><span class="fas fa-pen-nib me-1" data-fa-transform="shrink-4"></span><span>{{ $category->parent_id ? $category->parentCategory->name : '' }}</span></span><span class="badge rounded-pill badge-subtle-success"><span class="fas fa-crown me-1" data-fa-transform="shrink-4"></span><span>Top Trainer</span></span><span class="badge rounded-pill badge-subtle-warning"><span class="fas fa-award me-1" data-fa-transform="shrink-4"></span><span>Editor’s Choice</span></span></div>
                       <h5 class="fs-0"><a href="https://prium.github.io/falcon/v3.16.0/app/e-learning/trainer-profile.html">Bill Finger</a></h5>
-                      <h4 class="mt-3 mt-sm-0 fs-0 fs-lg-1"><a class="text-900" href="course-details.html">Script Writing Masterclass: Introdution to Industry Cliches</a></h4>
-                      <p class="fs--1 mt-2 d-none d-lg-block">Great Script Writers never avoid cliche moments, rather play with it. In this course, legendary Mr. Finger will explain the process in great details.</p>
+                      <h4 class="mt-3 mt-sm-0 fs-0 fs-lg-1"><a class="text-900" href="course-details.html">{{ $category->name }}</a></h4>
+                      <p class="fs--1 mt-2 d-none d-lg-block">{{ $category->description }}.</p>
                       <div class="flex-1 d-flex align-items-end fw-semi-bold fs--1"><span class="me-1 text-900">4.9</span>
                         <div> <span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star-half-alt text-warning star-icon"></span></div><span class="ms-2 text-secondary">(78,259 reviews)</span>
                       </div>
@@ -228,6 +229,8 @@
               </div>
             </div>
           </article>
+          @endforeach
+          
           <article class="card mb-3 overflow-hidden">
             <div class="card-body p-0">
               <div class="row g-0">

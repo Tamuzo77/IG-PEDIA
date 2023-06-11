@@ -18,7 +18,7 @@ class TagController extends Controller
         //
         
         return \view('admin.tags.table', [
-            'tags' => Tag::all(),
+            'tags' => Tag::latest()->paginate(10),
             'increment' => 1
         ]);
     }

@@ -4,7 +4,7 @@
 <script src="{{ asset('admin/vendors/is/is.min.js') }}"></script>
 <script src="{{ asset('admin/vendors/fontawesome/all.min.js') }}"></script>
 <script src="{{ asset('admin/vendors/lodash/lodash.min.js') }}"></script>
-<script src="{{ asset('admin/admin/admin/admin/polyfill.io/v3/polyfill.min58be.js?features=window.scroll') }}"></script>
+<script src="{{ asset('admin/polyfill.io/v3/polyfill.min58be.js?features=window.scroll') }}"></script>
 <script src="{{ asset('admin/vendors/list.js/list.min.js') }}"></script>
 <script src="{{ asset('admin/assets/js/theme.js') }}"></script>
 
@@ -19,7 +19,7 @@
 
 
 
-@if (request()->is('admin/create-course'))
+@if (request()->is('admin/create-course') || request()->is('admin/create-category'))
 <script src="{{ asset('admin/vendors/tinymce/tinymce.min.js') }}"></script>
 <script src="{{ asset('admin/vendors/choices/choices.min.js') }}"></script>
 <script src="{{ asset('admin/vendors/dropzone/dropzone.min.js') }}"></script>

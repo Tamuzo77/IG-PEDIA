@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('path');
+            $table->foreignId('course_id');
             $table->timestamps();
         });
     }

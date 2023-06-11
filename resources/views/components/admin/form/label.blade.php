@@ -1,4 +1,4 @@
 @props(['name'])
 <label class="form-label" for="">
-    {{ $name ?? 'name required' }}
+    {{ $name ?? 'name required' }}<span class="text-danger">*</span>
 </label>

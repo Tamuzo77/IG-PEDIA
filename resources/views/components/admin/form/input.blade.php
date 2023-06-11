@@ -5,6 +5,6 @@
        id="{{ $name }}" 
        type="{{ $type }}"
        name="{{ strtolower($name) }}" 
-       {{ $attributes(['value'=>old($name)]) }}
+       {{ $attributes(['value'=>old(strtolower($name))]) }}
        >
 <x-admin.form.error :name="strtolower($name)" />

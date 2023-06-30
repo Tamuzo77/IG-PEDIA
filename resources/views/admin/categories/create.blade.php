@@ -64,7 +64,7 @@
         
     </div>
 
-    <script>
+    {{--<script>
  Dropzone.autoDiscover = false;
     var myDropzone = new Dropzone("#my-dropzone", {
         url: "{{ route('admin.category-store') }}",
@@ -78,5 +78,5 @@
         console.log(response.file); // Affiche le chemin du fichier sur le serveur
     });
 
-    </script>
+    </script>--}}
 </x-admin.layouts>
